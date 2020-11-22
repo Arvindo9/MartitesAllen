@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.forecast.ForecastViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/layoutDay"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/layoutSmallDefault"
+        app:cardCornerRadius="@dimen/card_corner_radius">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_10dp"
+            android:gravity="center_vertical|start">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end|center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dutyOfficer"
+                    android:text="@{data.animalName}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textBodyDark"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/_4dp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dutyOfficerImage"
+                    app:ImageViewUrl="@{data.animalImage}"
+                    android:layout_width="@dimen/imageIconAlmanac"
+                    android:layout_height="@dimen/imageIconAlmanac"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/border"
+                android:layout_margin="@dimen/_10dp"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutDate"
+                android:onClick="@{() -> data.onDateChangeClick()}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/todayText"
+                    android:text="@string/today"
+                    style="@style/textBodyDark"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dateText"
+                    android:text="October 25, 2020"
+                    style="@style/textBodyDark"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_arrow_down"
+                    android:layout_marginLeft="@dimen/_10dp"
+                    android:layout_marginStart="@dimen/_10dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+
+<androidx.appcompat.widget.Toolbar
+    app:layout_scrollFlags="scroll|enterAlways"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:backgroundTint="@color/toolbarColor"
+    app:elevation="@dimen/_8dp"
+    app:contentInsetStartWithNavigation="0dp">
+<!--    app:contentInsetLeft="0dp"-->
+<!--    app:contentInsetStart="0dp"-->
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/daily_forecast"
+            style="@style/textSubHeadingDark"
+            android:padding="@dimen/_4dp"
+            android:layout_marginLeft="@dimen/layoutMarginDefault"
+            android:layout_marginStart="@dimen/layoutMarginDefault"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageArrowDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arrow_down"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutLast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end|center_vertical"
+            android:layout_marginRight="@dimen/layoutMarginDefault"
+            android:layout_marginEnd="@dimen/layoutMarginDefault">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
+                android:id="@+id/titleTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sheep"
+                style="@style/textBodyDark"
+                android:padding="@dimen/_4dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:visibility="gone"
+                android:id="@+id/imageTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textSubHeadingDark"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/calender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_calender_color"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_logout"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.Toolbar>
+
+</layout>

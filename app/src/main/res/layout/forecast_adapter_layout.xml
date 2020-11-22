@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.forecast.ForecastViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/layout"
+    style="@style/layoutSmallDefault"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<!--
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:listitem="@layout/adapter_forecast"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="2"
+        app:ForecastAdapter="@{data.modelObservableList}"
+        app:spanCount="3"/>
+-->
+    <com.maritesallen.almanac2020.base.views.BaseViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pager"
+        tools:listitem="@layout/fragment_forecast_adapter"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

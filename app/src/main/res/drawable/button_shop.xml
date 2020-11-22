@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  res/drawable/edittext_rounded_corners.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_focused="true"
+        android:state_enabled="true">
+        <shape>
+            <gradient
+                android:startColor="@color/colorView"
+                android:centerColor="@color/colorView"
+                android:endColor="@color/colorView"
+                android:angle="90"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorView" />
+            <corners android:radius= "30dp" />
+        </shape>
+    </item>
+
+    <item
+        android:state_pressed="true"
+        android:state_enabled="true">
+        <shape>
+            <gradient
+                android:startColor="@color/colorCard"
+                android:centerColor="@color/colorCard"
+                android:endColor="@color/colorCard"
+                android:angle="90"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorCard" />
+            <corners android:radius= "30dp" />
+        </shape>
+    </item>
+
+    <item
+        android:state_enabled="true">
+        <shape>
+            <gradient
+                android:startColor="@color/colorView"
+                android:centerColor="@color/colorView"
+                android:endColor="@color/colorView"
+                android:angle="90"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorView" />
+            <corners android:radius= "30dp" />
+        </shape>
+    </item>
+
+</selector>

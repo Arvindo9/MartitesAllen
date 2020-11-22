@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.profile.ProfileViewModel" />
+
+        <variable
+            name="dataForecast"
+            type="com.maritesallen.almanac2020.ui.dashboard.forecast.ForecastViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        style="@style/layoutSmallDefault"
+        app:cardBackgroundColor="@color/colorCard">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_premium"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="3"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upgrade_the_app"
+                        style="@style/textHeadingDark"
+                        android:layout_marginTop="@dimen/topMarginDefault"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upgrade_title1"
+                        style="@style/textBodyLowDark"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upgrade_title2"
+                        style="@style/textBodyLowDark"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/upgrade"
+                        android:onClick="@{(view) -> data.onUpgradeClick(view)}"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upgradeNow"
+                        style="@style/button"
+                        android:background="@drawable/button_round"
+                        android:layout_marginTop="@dimen/topMarginUpgradeCard"
+                        android:layout_marginBottom="@dimen/topMarginCalenderCard"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

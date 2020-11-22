@@ -1,0 +1,198 @@
+apply plugin: 'com.android.application'
+apply plugin: "androidx.navigation.safeargs"
+
+apply plugin: 'com.google.gms.google-services'
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.maritesallen.almanac2020"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 13
+        versionName "2.2"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"http://13.251.29.198/\"")
+            buildConfigField("String", "CACHE_DIR", "\"default/Cache\"")
+            buildConfigField("String", "OS_TYPE", "\"ANDROID_OS\"")
+            buildConfigField("String", "ADS_BANNER_UNIT", "\"ca-app-pub-2108736431589809/6089106250\"")
+            resValue 'string', 'ADS_BANNER_UNIT', 'ca-app-pub-2108736431589809/6089106250'
+        }
+
+        debug {
+            debuggable true
+            buildConfigField("String", "BASE_URL", "\"http://13.251.29.198/\"")
+            buildConfigField("String", "CACHE_DIR", "\"default/Cache\"")
+            buildConfigField("String", "OS_TYPE", "\"ANDROID_OS\"")
+//            buildConfigField("String", "ADS_BANNER_UNIT", "\"ca-app-pub-3940256099942544/6300978111\"")
+            buildConfigField("String", "ADS_BANNER_UNIT", "\"ca-app-pub-2108736431589809/6089106250\"")
+            resValue 'string', 'ADS_BANNER_UNIT', 'ca-app-pub-3940256099942544/6300978111'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //multidex-----------------------
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //Okhttp-------------------------
+    implementation 'com.squareup.okhttp3:okhttp:3.12.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.2'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.12.2'
+
+//    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+//    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+//    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.2.2'
+
+//    implementation 'com.squareup.okhttp:okhttp:2.2.0'
+//    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+
+    //Retrofit-----------------------
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.2'
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //picasso--------------------------------------------------
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Dagger--------------------------
+    implementation 'com.google.dagger:dagger:2.25.4'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.25.4'
+    implementation 'com.google.dagger:dagger-android:2.25.4'
+    implementation 'com.google.dagger:dagger-android-support:2.25.4'
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    // if you use the support libraries
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.25.4'
+
+    implementation 'javax.inject:javax.inject:1'
+
+    // reactive ----------------------------------------------
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+
+    //Database room-------------------------------------------
+
+    implementation 'androidx.room:room-rxjava2:2.2.3'
+    implementation 'androidx.room:room-runtime:2.2.3'
+    annotationProcessor 'androidx.room:room-compiler:2.2.3'
+    androidTestImplementation 'androidx.room:room-testing:2.2.3'
+    implementation 'androidx.room:room-guava:2.2.3'
+
+    //enceyption
+//    implementation "com.commonsware.cwac:saferoom:1.0.3"
+    //------------------------------------------------------------
+
+    // Logging using Timber -----------------------------------
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+
+    //---------------------------------------------------------
+    //Dependencies for Lifecycle, including LiveData and ViewModel
+
+    // ViewModel and LiveData
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+//    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    //-----------------------------------------------------------
+
+    //Stetho Facebook Network debugger----------------------------
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+
+    // Navigation-------------------------------------------------
+    implementation "androidx.navigation:navigation-fragment:2.2.0"
+    implementation "androidx.navigation:navigation-ui:2.2.0"
+
+    //circle image
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    //Location---------------------------------------------------
+    implementation "com.google.android.gms:play-services-location:17.0.0"
+
+    //Billing----------------------------------------------------
+
+//    implementation 'com.android.billingclient:billing:2.0.3'
+//    implementation 'com.android.billingclient:billing:1.1'
+
+    //Facebook--------------------------------------------------
+    implementation 'com.facebook.android:facebook-login:5.12.0'
+
+    //Image cropper---------------------------------------------
+    implementation 'com.github.yalantis:ucrop:2.2.4'
+
+    //Encryption pdf--------------------------------------------
+//    implementation 'org.bitbucket.poptv_library.android_library:poptvcustomdrm:v1.6.6'
+//    implementation 'org.bitbucket.poptv_library.android_library:poptvcustomdrm:v1.6.7'
+    implementation 'org.bitbucket.poptv_library.android_library:poptvcustomdrm:v1.7.1'
+
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
+
+    //Firebase-------------------------------------------------
+
+    // Recommended: Add the Firebase SDK for Google Analytics.
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+    // Add the Firebase SDK for Crashlytics.
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
+    //push
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+
+    //Ads-------------------------------------------------------
+
+    implementation 'com.google.android.gms:play-services-ads:18.3.0'
+
+    //Billing---------------------------------------------------
+
+    implementation 'com.android.billingclient:billing:2.1.0'
+
+    //loader----------------------------------
+
+    implementation 'com.facebook.shimmer:shimmer:0.3.0@aar'
+    implementation 'com.intuit.sdp:sdp-android:1.0.4'
+
+    //pdf--------------------------------------------
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+    implementation 'org.androidannotations:androidannotations-api:4.6.0'
+    annotationProcessor "org.androidannotations:androidannotations:4.6.0"
+
+    implementation 'com.github.javiersantos:BottomDialogs:1.1'
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+    <import type="android.view.View"/>
+
+    <variable
+        name="data"
+        type="com.maritesallen.almanac2020.core.dialogs.calender.adapter.CalenderAdapterViewModel" />
+</data>
+<!--
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    app:cardBackgroundColor="@color/colorPrimaryCard">
+-->
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/card_inner_margin">
+
+    <TextView
+        android:id="@+id/month"
+        android:text="@{data.month}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="January"
+        style="@style/textBodyDark"
+        android:layout_marginLeft="@dimen/layoutMarginDefault"
+        android:layout_marginStart="@dimen/layoutMarginDefault" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comma"
+        tools:text="@string/comma"
+        style="@style/textBodyDark"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/year"
+        android:text="@{data.year}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="January"
+        style="@style/textBodyDark"
+        android:visibility="gone"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:visibility="@{data.lastBorder? View.GONE : View.VISIBLE}"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/border"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+<!--</androidx.cardview.widget.CardView>-->
+<!--</RelativeLayout>-->
+</layout>

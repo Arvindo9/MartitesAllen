@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.defaultActivity.DefaultViewModel" />
+    </data>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout"
+    android:background="@drawable/background">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/toolbar_general"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/layoutSmallDefault"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_marginBottom="@dimen/layoutMarginDefault"
+        android:layout_marginTop="@dimen/layoutMarginDefault">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/suitableList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/adapter_forecast_suitable"
+                app:DefaultSuitableAdapter="@{data.modelSuitableList}"
+                app:spanCount="3"
+                android:layout_marginBottom="@dimen/layoutMarginTopInnerCard"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/unsuitableList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/adapter_forecast_unsuitable"
+                app:DefaultUnsuitableAdapter="@{data.modelUnsuitableList}"
+                app:spanCount="3"
+                android:layout_marginBottom="@dimen/layoutMarginTopInnerCard"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <include
+        android:id="@+id/forecast_activity_calendar"
+        layout="@layout/forecast_activity_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:data="@{data}"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+    <include
+        layout="@layout/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+</FrameLayout>
+</layout>

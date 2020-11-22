@@ -1,0 +1,243 @@
+<resources>
+    <string name="app_name">Marites Allen Almanac 2020</string>
+
+    <string name="facebook_app_id">538832193626559</string>
+    <string name="fb_login_protocol_scheme">fb538832193626559</string>
+<!--    <string name="adsUnitBanner">ca-app-pub-3940256099942544/6300978111</string>-->
+
+    <string name="adsUnitBanner" translatable="false">@string/ADS_BANNER_UNIT</string>
+
+
+    <!--
+        This is the name that users will see when interacting with this channel.
+        It should describe the category of notifications that will be sent through this channel
+     -->
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="default_notification_channel_name" translatable="true">Weather</string>
+    <string name="msg_subscribed">Subscribed to weather topic</string>
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <string name="msg_subscribe_failed">Failed to subscribe to weather topic</string>
+    <string name="subscribe_to_weather">Subscribe To Weather</string>
+    <string name="log_token">Log Token</string>
+
+    <string name="quickstart_message">Click the SUBSCRIBE TO WEATHER button below to subscribe to the
+        weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the
+        InstanceID token to logcat.</string>
+    <string name="fcm_message">FCM Message</string>
+    <string name="close">close</string>
+    <string name="feedback">Feedback</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="fieldOfInterest">Field of interest</string>
+    <string name="notifications">Notifications</string>
+    <string name="filter_option">Filter option</string>
+    <string name="this_is_a_custom_layout">This is a custom layout This is a custom layout This is a custom layout This is a custom layout</string>
+    <string name="title">Title</string>
+    <string name="_10_14_pm">10:14 PM</string>
+
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+<!--    <string name="str_ShowOnPermisstion">Please Allow permission for your app.-->
+<!--        If you deny permissions will not be able to use functionality of this app.</string>-->
+    <string name="str_ShowOnPermisstion">You’ve previously disabled Read and Write Storage permission</string>
+    <string name="log_in_as_guest">Log in as Guest</string>
+    <string name="connect_facebook">Login with Facebook</string>
+    <string name="log_in">Log in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forgot Password?</string>
+    <string name="forget_password_note">Please type in your email and we will send you a link to access
+            your account</string>
+    <string name="send_email">Send Email</string>
+    <string name="name">Name</string>
+    <string name="birthDate">Birth date</string>
+    <string name="birthTime">Birth time</string>
+    <string name="optional">(optional)</string>
+    <string name="country">Country</string>
+    <string name="confirmPassword">Re-type password</string>
+    <string name="terms">I have read and agree to the
+        <u>Terms and Conditions</u></string>
+    <string name="login">Login</string>
+    <string name="signup">Sign-up</string>
+    <string name="signup_screen_note">Please fill in the following details for better luck forecast</string>
+    <string name="signUp">Sign up</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="login_to_continue">Login to continue Marites Allen</string>
+    <string name="rememberMe">Remember me</string>
+    <string name="newUser">New user?&#160;<u>Sign up</u></string>
+    <string name="signUpCondition">By signing up you indicate that you have read and agreed to the Marites Allen
+        <u>Terms of Service</u></string>
+    <string name="mobile_number_empty">Mobile number is blank</string>
+    <string name="errorMobile">Incorrect Mobile number</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="invalid_password">Password is empty</string>
+    <string name="invalid_password_length">Password length too short</string>
+    <string name="invalid_confirm_password">Password does not match</string>
+    <string name="invalid_first_name">Name is empty</string>
+    <string name="forecast">Forecast</string>
+    <string name="profile">Profile</string>
+    <string name="books">Books</string>
+    <string name="calender">Calendar</string>
+    <string name="suitable_activities">Suitable Activities</string>
+    <string name="unsuitable_activities">Unsuitable Activities</string>
+    <string name="upgrade_the_app">Upgrade the app</string>
+    <string name="upgradeNow">Upgrade now</string>
+    <string name="upgrade_title1">Access your year round guide to</string>
+    <string name="upgrade_title2">Auspicious Activities at your fingers</string>
+    <string name="year_of_the_sheep">YEAR OF THE SHEEP</string>
+    <string name="about">About</string>
+    <string name="termsCondition">Terms and Condition</string>
+    <string name="privacyPolicy">Privacy Policy</string>
+    <string name="appInfo">App Info</string>
+    <string name="restore">Restore</string>
+    <string name="restore_data_content">Restore Data Content</string>
+    <string name="update_data_content">Update data content based on data content</string>
+    <string name="daily_forecast">Daily Forecast</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="shop_now">Shop now</string>
+    <string name="accept_terms">Accept Terms and Condition</string>
+    <string name="forecast_month_note1">*Time indicated is in military format</string>
+    <string name="forecast_month_note2">*Hour of the day animal sign will be based on your birth time, if supplied.</string>
+    <string name="forecast_month_note3">If not, it will be based on your birth year.</string>
+    <string name="comma">,</string>
+    <string name="select_month">Select month of 2020</string>
+    <string name="upgrade_title">Upgrade to see premium features</string>
+    <string name="monthly_daily_forecast"><![CDATA[Monthly & Daily Forecast]]></string>
+    <string name="flying_star_indications">Flying Star Indications</string>
+    <string name="know_your_animal_sign">Know your Animal Sign activities</string>
+    <string name="the_hungry_ghost_month">The Hungry Ghost month</string>
+    <string name="sessionExpireTitle">Session Expired</string>
+    <string name="sessionExpireBody">Your session has been expired, it is recommended to re-login to access your account</string>
+    <string name="proceed">Proceed</string>
+    <string name="premiumAlertTitle">Premium Feature</string>
+    <string name="premiumAlertBody">Subscribe to access your guide to Auspicious Activities all year round!</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancelP">" Cancel "</string>
+    <string name="continue_">Continue</string>
+    <string name="premiumAlertTitleGuest">You are currently logged in as a guest user</string>
+    <string name="premiumAlertBodyGuest">Please log in/sign up to know your 2020 Fortune Forecast</string>
+    <string name="country_load_fail">Country load fail</string>
+    <string name="select_country">Select your country</string>
+    <string name="ok">OK</string>
+
+
+
+    <string name="jan">Jan</string>
+    <string name="feb">Feb</string>
+    <string name="mar">Mar</string>
+    <string name="apr">Apr</string>
+    <string name="may">May</string>
+    <string name="jun">Jun</string>
+    <string name="jul">Jul</string>
+    <string name="aug">Aug</string>
+    <string name="sep">Sep</string>
+    <string name="oct">Oct</string>
+    <string name="nov">Nov</string>
+    <string name="dec">Dec</string>
+
+    <string name="January">January</string>
+    <string name="February">February</string>
+    <string name="March">March</string>
+    <string name="April">April</string>
+    <string name="May">May</string>
+    <string name="June">June</string>
+    <string name="July">July</string>
+    <string name="August">August</string>
+    <string name="September">September</string>
+    <string name="October">October</string>
+    <string name="November">November</string>
+    <string name="December">December</string>
+
+    <string name="select_date">Select date</string>
+    <string name="save">Save</string>
+    <string name="saveP">" Save "</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="change">Change</string>
+    <string name="select_pic">Select image</string>
+    <string name="select_time">Select Time</string>
+    <string name="error_default">Try again later</string>
+    <string name="enter_birth_date">Enter date of birth</string>
+    <string name="checkYourEmail">Check your email</string>
+    <string name="file_not_found">File not found</string>
+    <string name="future_date_error">Can\'t select future date</string>
+    <string name="suitable_icons_legend">Suitable Icons Legends</string>
+    <string name="unsuitable_icons_legend">Unsuitable Icons Legends</string>
+    <string name="purchase">Purchase</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="authentication_fail">Authentication fail</string>
+    <string name="list_sutable_dates">List of Suitable Dates</string>
+    <string name="list_unsutable_dates">List of Unsuitable Dates</string>
+    <string name="today">"Today, "</string>
+    <string name="network_error">No Internet Connection</string>
+    <string name="invalid_country">Country should not be blank</string>
+    <string name="guest_login">You are currently logged in as a guest user</string>
+    <string name="guest_login_body">Please log-in/sign-up to know your 2020 Fortune Forecast</string>
+    <string name="search">Search</string>
+    <string name="facebook_screen_note">Please input your birth details and country for better luck forecast</string>
+
+    <string name="price">&#8369;</string>
+    <string name="books_dialog_note">Want to know your complete forecasting for 2020?</string>
+    <string name="file_downloaded_successfully">File downloaded successfully</string>
+    <string name="otp">OTP</string>
+    <string name="update">Update</string>
+    <string name="invalid_Otp">OTP is empty</string>
+    <string name="forget_password_update_note">Verify your email and set new password</string>
+    <string name="new_password">New Password</string>
+    <string name="read">"  READ  "</string>
+    <string name="file_downloaded_not_success">File downloaded not succeed.\n Please retry again</string>
+    <string name="guest_user">Guest User</string>
+    <string name="login_again">Network error, Please login again</string>
+    <string name="last_date_error">Does\'t have data before 1932</string>
+
+    <string name="success_premium_user">Congratulation! you are now a premium user</string>
+    <string name="comming_soon">Coming soon</string>
+    <string name="logout">Logout</string>
+    <string name="logout_messsage">Are you sure you want to logout?</string>
+    <string name="file_download_start">File download start</string>
+    <string name="this_file_download">file has been downloaded</string>
+    <string name="restoring_in_progress">Restoring in progress</string>
+    <string name="downloading">Downloading</string>
+    <string name="restore_message">Restore in progress&#8230;  \n\nIt will take some time&#8230;
+        \n\nPlease! do not close your application, we will notify you once it will be done</string>
+    <string name="restore_successful">Restore successful</string>
+    <string name="restore_unsuccessful">Nothing to restore</string>
+    <string name="philippines">Philippines</string>
+    <string name="purchase_success_message">Payment has been successfully done,\n Please wait&#8230;</string>
+    <string name="downloading_file_message">Download in progress. It will take some time
+        \n\nWe will notify you when it will be down</string>
+    <string name="book_downloaded">Book downloaded successfully</string>
+    <string name="on_download_book_positive_message">The book is ready for viewing</string>
+    <string name="book_downloaded_failure">Download error</string>
+    <string name="on_download_book_negative_message">Some error occur while downloading&#8230;
+        \nPlease try again later</string>
+    <string name="loading_wait">Loading&#8230; Please wait</string>
+    <string name="restore_file_download_message">File successfully downloaded, please wait</string>
+    <string name="please_wait">Please wait!</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="dob">Birth date</string>
+    <string name="dob_edit_error">Date of birth can not be edit any more</string>
+    <string name="dob_edit_note">You can edit your date of birth only once.</string>
+    <string name="download_started">Download&#8230;</string>
+    <string name="download_started_note">This may take a few moment.</string>
+    <string name="downloaded_successfully">Successfully Downloaded</string>
+    <string name="ready_for_read">Your book is ready for a good read</string>
+    <string name="download_fail">Download failed</string>
+    <string name="download_fail_note">Your book download is not succeed due to network issue</string>
+    <string name="not_now">Not now</string>
+    <string name="update_app">Update App</string>
+    <string name="update_available">Update available</string>
+    <string name="already_premium_user">Already premium user</string>
+    <string name="you_are_offline">You are Offline</string>
+    <string name="try_back_later">Yor can try back later when your internet will available or you can
+        search other options which are downloaded offline</string>
+    <string name="your_are_on_current_date">You are looking at Today\'s forecast</string>
+    <string name="current_date">Current Date</string>
+    <string name="today_forecast">Today\'s forecast</string>
+    <string name="previousPayment">Your previous purchase was not sync</string>
+    <string name="unauthorisePayment">unauthorised payment</string>
+    <string name="userBlock">User block</string>
+    <string name="blockUser_note">Your account is blocked, Please contact to admin</string>
+
+</resources>

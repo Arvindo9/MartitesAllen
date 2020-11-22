@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.core.dialogs.alert.AlertViewModel" />
+
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/alert_dialog_margin"
+        app:cardCornerRadius="@dimen/card_corner_radius_default">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/alert_dialog_margin"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/currentPasswordLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    android:text="@{data.title}"
+                    tools:text="Title"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="@dimen/alert_dialog_title_size"
+                    android:padding="@dimen/alert_dialog_margin"
+                    android:paddingRight="60dp"
+                    android:paddingEnd="60dp"
+                    android:paddingStart="@dimen/alert_dialog_margin"
+                    android:paddingLeft="@dimen/alert_dialog_margin" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:onClick="@{() -> data.onCancelClick()}"
+                    android:id="@+id/currentPasswordEye"
+                    style="?android:buttonBarButtonStyle"
+                    android:paddingBottom="5dp"
+                    app:srcCompat="@drawable/ic_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-60dp"
+                    android:layout_marginStart="-60dp"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/heading"
+                android:text="@{data.heading}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Heading"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/alert_dialog_title_size"
+                android:padding="@dimen/_8dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/body"
+                android:text="@{data.body}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Body"
+                android:textSize="@dimen/alert_dialog_title_size"
+                android:padding="@dimen/_8dp"
+                android:layout_marginLeft="@dimen/alert_dialog_margin"
+                android:layout_marginStart="@dimen/alert_dialog_margin"
+                android:layout_marginEnd="@dimen/alert_dialog_margin"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UselessLeaf" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/yes"
+                    android:onClick="@{() -> data.onYesClick()}"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16sp"
+                    android:text="@string/yes"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/no"
+                    android:onClick="@{() -> data.onNoClick()}"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16sp"
+                    android:text="@string/no"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.profile.ProfileViewModel" />
+    </data>
+<FrameLayout
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/profileSheepImageSizeHalf">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardBackgroundColor="@color/colorCard"
+    style="@style/layoutSmallDefault">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    style="@style/layoutDefault"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/textSubHeadingDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/profileSheepTopView"
+        android:gravity="center"
+        android:text="@{data.yearOfAnimal}"
+        tools:text="@string/year_of_the_sheep" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/textBodyDark"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMarginUpgradeCard"
+        android:gravity="center"
+        android:text="@{data.yearList}"
+        tools:text="1907 | 1919 | 1931 | 1943 | 1955\n 1987 | 1991 | 2003 | 2015" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/textBodyDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMarginUpgradeCard"
+        android:text="@{data.description}"
+        tools:text="Opportunities both career and business luck can split over from last year to this yearal though the malistore star plays you a visit this year.  " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/topMarginDefault"
+        android:background="@color/border" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layoutMarginTopInnerCard"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/imageIconAlmanac"
+            android:layout_height="@dimen/imageIconAlmanac"
+            app:ImageViewUrl="@{data.romanceIcon}"
+            tools:srcCompat="@drawable/ic_romance"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textSubHeadingDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/topMarginCalenderCard"
+            android:text="@{data.romanceTitle}"
+            tools:text="Romance" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/textBodyDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{data.romance}"
+        tools:text="Opportunities both career and business luck can split over from last year to this yearal though the malistore star plays you a visit this year.  " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/topMarginDefault"
+        android:background="@color/border" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layoutMarginTopInnerCard"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/imageIconAlmanac"
+            android:layout_height="@dimen/imageIconAlmanac"
+            app:ImageViewUrl="@{data.wealthIcon}"
+            tools:srcCompat="@drawable/ic_wealth" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textSubHeadingDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/topMarginCalenderCard"
+            android:text="@{data.wealthTitle}"
+            tools:text="Wealth" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/textBodyDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{data.wealth}"
+        tools:text="Opportunities both career and business luck can split over from last year to this yearal though the malistore star plays you a visit this year.  " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/topMarginDefault"
+        android:background="@color/border" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layoutMarginTopInnerCard"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/imageIconAlmanac"
+            android:layout_height="@dimen/imageIconAlmanac"
+            app:ImageViewUrl="@{data.healthIcon}"
+            tools:srcCompat="@drawable/ic_health" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textSubHeadingDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/topMarginCalenderCard"
+            android:text="@{data.healthTitle}"
+            tools:text="Health" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/textBodyDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{data.health}"
+        tools:text="Opportunities both career and business luck can split over from last year to this yearal though the malistore star plays you a visit this year.  " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/topMarginDefault"
+        android:background="@color/border" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layoutMarginTopInnerCard"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/imageIconAlmanac"
+            android:layout_height="@dimen/imageIconAlmanac"
+            app:ImageViewUrl="@{data.careerIcon}"
+            tools:srcCompat="@drawable/ic_career" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textSubHeadingDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/topMarginCalenderCard"
+            android:text="@{data.careerTitle}"
+            tools:text="Career" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/textBodyDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/topMarginDefault"
+        android:text="@{data.career}"
+        tools:text="Opportunities both career and business luck can split over from last year to this year although the malistore star plays you a visit this year.  " />
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/animalImage"
+        android:layout_width="@dimen/profileSheepImageSize"
+        android:layout_height="@dimen/profileSheepImageSize"
+        tools:src="@color/com_facebook_blue"
+        app:ImageViewUrl="@{data.animalIcon}"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
+</FrameLayout>
+</layout>

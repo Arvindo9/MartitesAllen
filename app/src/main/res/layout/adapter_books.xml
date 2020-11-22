@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.books.adapter.BooksAdapterViewModel" />
+    </data>
+
+<RelativeLayout
+    android:id="@+id/layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_15sdp"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookImage"
+        app:ImageViewUrl="@{data.book}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/textBodyVeryLowDark"
+        tools:text="kjkasjdkasjd193"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:padding="@dimen/_5sdp" />
+
+
+</RelativeLayout>
+<!--
+
+<RelativeLayout
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_20dp"
+    android:layout_marginBottom="@dimen/_20dp">
+
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bookImage"
+            app:ImageViewUrl="@{data.book}"
+            tools:background="@drawable/b1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/textBodyVeryLowDark"
+        tools:text="193"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/_50sdp"
+        android:gravity="center"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom|end">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"/>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8.2"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.8"
+                style="@style/textBodyVeryLowDark"
+                tools:text="193"
+                android:gravity="center"
+                android:layout_centerInParent="true"/>
+&lt;!&ndash;            android:text="@{data.prise}"&ndash;&gt;
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>
+
+    -->
+</layout>

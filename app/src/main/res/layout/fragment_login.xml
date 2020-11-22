@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.access.login.LoginViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical"
+        style="@style/layoutDefault"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_back"
+                android:layout_centerInParent="true"
+                style="@style/textHeading"
+                android:textStyle="bold"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_to_continue"
+                android:layout_centerInParent="true"
+                style="@style/textBody"
+                />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/layoutMarginDefault"
+            android:layout_marginTop="@dimen/topMarginDefault"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editTextBox"
+                android:inputType="textEmailAddress"
+                android:hint="@string/email"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/accessEditTextTopMargin">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/editTextBox"
+                    android:inputType="textPassword"
+                    android:hint="@string/password"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/showPassword"
+                    android:onClick="@{() -> data.onShowPasswordClick()}"
+                    app:srcCompat="@drawable/ic_eye"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginRight="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_10dp" />
+            </FrameLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            style="@style/layoutDefault">
+
+            <RadioGroup
+                android:visibility="gone"
+                android:id="@+id/rememberChoiceGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true">
+
+                <RadioButton
+                    android:id="@+id/rememberChoice"
+                    android:onClick="@{() -> data.onRememberClick()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rememberMe"
+                    style="@style/textBody"
+                    android:padding="0dp"
+                    android:textSize="@dimen/textSizeMedium"
+                    />
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/forgetPassword"
+                android:onClick="@{(view) -> data.onForgetPasswordClick(view)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forget_password"
+                android:layout_gravity="end"
+                style="@style/textBody"
+                android:textSize="@dimen/textSizeMedium"
+                android:gravity="end"
+                android:padding="0dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/rememberChoiceGroup"
+                android:layout_toRightOf="@id/rememberChoiceGroup"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/login"
+                android:onClick="@{(view) -> data.onLoginClick(view)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/log_in"
+                android:padding="@dimen/_10dp"
+                android:layout_centerInParent="true"
+                style="@style/button"
+                android:layout_marginLeft="@dimen/layoutMarginDefault"
+                android:layout_marginRight="@dimen/layoutMarginDefault"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:gravity="center"
+        style="@style/layoutDefault">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/signUp"
+            android:onClick="@{(view) -> data.onSignUpClick(view)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="@dimen/_10dp"
+            android:layout_centerInParent="true"
+            android:text="@string/newUser"
+            style="@style/textBodyLow"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/terms"
+            android:onClick="@{() -> data.onTermsClick()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signUpCondition"
+            style="@style/textBodyLow"
+            android:gravity="center"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

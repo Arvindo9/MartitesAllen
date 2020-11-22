@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.calender.calenderAdapter.CalenderAdapterViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+<!--    android:background="@color/transparent"-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/border"/>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    style="@style/layoutDefault"
+    android:layout_marginTop="@dimen/topMarginCalenderCardIcon"
+    android:layout_marginBottom="@dimen/topMarginCalenderCard">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical|start">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/imageIconCalender"
+            android:layout_height="@dimen/imageIconCalender"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardBackgroundColor="@color/colorPrimary" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/calenderDateImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_calendar_today"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/calenderDate"
+                    android:text="@{data.calenderDate}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_margin="1dp"
+                    tools:text="01"
+                    style="@style/textSubHeading"/>
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/topMarginCalenderCard">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dayName"
+                android:text="@{data.dayName}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textSubHeading"
+                tools:text="Monday New Year"/>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="@{data.moonIcon.isEmpty()? View.GONE : View.VISIBLE}"
+                android:gravity="center_vertical|end">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/moonIcon"
+                    android:layout_width="@dimen/imageIconMoon"
+                    android:layout_height="@dimen/imageIconMoon"
+                    app:ImageViewUrl="@{data.moonIcon}"
+                    tools:srcCompat="@drawable/ic_moon"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/moonText"
+                    android:text="@{data.moonStatus}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Full moon"
+                    style="@style/textBody"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dutyOfficer"
+            android:text="@{data.dutyOfficer}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textBodyLow"
+            tools:text="Monday New Year"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/suitableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/topMarginCalenderCardIcon">
+<!--
+            <include
+                android:id="@+id/base_calender_layout"
+                layout="@layout/base_calender_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+-->
+
+            <com.maritesallen.almanac2020.base.views.BaseLinearTextHorizontal
+                android:id="@+id/activityBaseLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:RightMargin="5dp"
+                app:ViewSize="@dimen/baseImageSize"
+                app:Layout="@layout/base_calender_layout"
+                app:LayoutText="@layout/base_calender_icon"
+                app:BaseCalenderIcon="@{data.activityList}">
+            </com.maritesallen.almanac2020.base.views.BaseLinearTextHorizontal>
+<!--
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/listViewSuitable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:itemCount="3"
+                tools:listitem="@layout/adapter_calender_symbol"
+                app:spanCount="3"
+                android:background="@drawable/background"/>
+            -->
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

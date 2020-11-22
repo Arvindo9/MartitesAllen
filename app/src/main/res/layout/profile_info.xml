@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.profile.ProfileViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/card_outer_margin"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardBackgroundColor="@color/colorView">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/editProfileImage"
+            android:onClick="@{() -> data.onChangeProfileImageClick()}"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:layout_margin="@dimen/card_inner_margin_adapter">
+
+<!--            app:ImageViewUri="@{data.profilePicFile}"-->
+            <RelativeLayout
+                android:layout_width="@dimen/profileImageSize"
+                android:layout_height="@dimen/profileImageSize">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="@dimen/profileImageSize"
+                    android:layout_height="@dimen/profileImageSize"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="1dp"
+                    app:ImageViewUrlProfile="@{data.profilePic}"/>
+    <!--            app:srcCompat="@drawable/ic_user_profile_default"-->
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:id="@+id/changeProfilePicLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="@dimen/_5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_camera"
+                        android:layout_gravity="end"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/editProfileLayout"
+                android:onClick="@{() -> data.onEditProfileClick()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="end"
+                android:padding="@dimen/_5dp"
+                android:gravity="end">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_edit"
+                    android:layout_gravity="end"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical|top"
+                android:layout_marginRight="@dimen/_5dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/nameT"
+                        android:text="@{data.userName}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Clauia Kim"
+                        style="@style/textHeadingDark"/>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:visibility="gone"
+                        android:id="@+id/nameE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/birthDateT"
+                        android:text="@{data.birthDate}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="January 10, 1958"
+                        style="@style/textSubHeadingDark"/>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:visibility="gone"
+                        android:onClick="@{(view) -> data.onDateClick(view)}"
+                        android:id="@+id/birthDateE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/profileSaveLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:padding="@dimen/_10dp"
+        android:layout_gravity="bottom">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/editProfileCancel"
+            android:onClick="@{() -> data.onEditProfileCancelClick()}"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/cancelP"
+            android:padding="5dp"
+            style="@style/textBodyDark"
+            android:layout_marginEnd="@dimen/_2dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/editProfileSave"
+            android:onClick="@{() -> data.onEditProfileSaveClick()}"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/saveP"
+            style="@style/textBodyDark"
+            android:padding="5dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

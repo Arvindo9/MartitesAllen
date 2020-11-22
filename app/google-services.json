@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "53901110010",
+    "firebase_url": "https://marites-allen.firebaseio.com",
+    "project_id": "marites-allen",
+    "storage_bucket": "marites-allen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53901110010:android:fb2108f4053caa4af17743",
+        "android_client_info": {
+          "package_name": "com.maritesallen.almanac2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53901110010-8in8iag42pcfmm126rgjn7nv3erd16iv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4Nvs-fWVvTs9V5Ov9B2F6kxxkA1L5sx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53901110010-8in8iag42pcfmm126rgjn7nv3erd16iv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

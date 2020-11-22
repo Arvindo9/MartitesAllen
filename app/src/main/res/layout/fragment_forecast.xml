@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.forecast.ForecastViewModel" />
+    </data>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/background">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/_20dp"
+    android:id="@+id/layout">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_top_card"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.6"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6.8"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.4"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/background_rat"
+                android:layout_weight="5"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.4"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.6"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <include
+        android:id="@+id/layoutDay"
+        layout="@layout/forecast_day_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/layoutAdapter"
+        layout="@layout/forecast_adapter_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/layoutSuitableActivities"
+        layout="@layout/forecast_suitable_activities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:data="@{data}"/>
+
+
+    <include
+        android:id="@+id/layoutUnsuitableActivities"
+        layout="@layout/forecast_unsuitable_activities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMarginDefault"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/layoutAds"
+        layout="@layout/layout_ads"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:id="@+id/layoutSliderCard"
+        layout="@layout/forecast_slider_card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMarginDefault"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/layoutMonth"
+        layout="@layout/forecast_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMarginDefault"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/offline_card"
+        layout="@layout/offline_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:id="@+id/layoutGhostMonth"
+        layout="@layout/forecast_ghost_month_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/profile_upgrade_card"
+        layout="@layout/profile_upgrade_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dataForecast="@{data}"
+        android:layout_marginTop="@dimen/topMarginDefault"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>
+</layout>

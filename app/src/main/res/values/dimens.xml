@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="alert_dialog_margin">16dp</dimen>
+    <dimen name="alert_dialog_title_size">18sp</dimen>
+
+
+    <dimen name="layoutLeftMarginDefault">@dimen/layoutMarginDefault</dimen>
+    <dimen name="layoutRightMarginDefault">@dimen/layoutMarginDefault</dimen>
+    <dimen name="layoutMarginDefault">20dp</dimen>
+    <dimen name="layoutMarginSmallDefault">15dp</dimen>
+    <dimen name="layoutMarginTopInnerCard">10dp</dimen>
+    <dimen name="layoutMarginLeftProfile">14dp</dimen>
+    <dimen name="layoutMarginDistanceCard">14dp</dimen>
+
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_16sp">16sp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
+
+    <dimen name="card_corner_radius_default">18dp</dimen>
+    <dimen name="card_corner_radius">6dp</dimen>
+    <dimen name="card_inner_margin">8dp</dimen>
+    <dimen name="card_inner_margin_adapter">12dp</dimen>
+    <dimen name="card_outer_margin">15dp</dimen>
+
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="accessEditTextTopMargin">10dp</dimen>
+
+    <dimen name="textBoxSpacing">2dp</dimen>
+
+    <dimen name="textSizeLow">12sp</dimen>
+    <dimen name="textSizeMedium">14sp</dimen>
+
+
+    <!--Text size-->
+    <dimen name="textHeadingBig">22sp</dimen>
+    <dimen name="textHeading">18sp</dimen>
+    <dimen name="textSubHeading">16sp</dimen>
+    <dimen name="textBody">14sp</dimen>
+    <dimen name="textBodyLow">12sp</dimen>
+    <dimen name="textBodyVeryLow">9sp</dimen>
+
+
+    <dimen name="imageIconMoon">16dp</dimen>
+    <dimen name="imageIconAlmanac">26dp</dimen>
+    <dimen name="imageIconAlmanacMonth">40dp</dimen>
+    <dimen name="imageIconAlmanacCalender">28dp</dimen>
+    <dimen name="imageIconCalender">42dp</dimen>
+
+    <dimen name="dashboardIconTextSize">10sp</dimen>
+
+    <dimen name="topMarginDefault">20dp</dimen>
+    <dimen name="topMarginDoubleDefault">40dp</dimen>
+    <dimen name="topMarginCalenderCard">10dp</dimen>
+    <dimen name="topMarginCalenderCardIcon">4dp</dimen>
+    <dimen name="topMarginUpgradeCard">10dp</dimen>
+
+    <dimen name="marginCalenderIcon">4dp</dimen>
+
+    <dimen name="cardHeaderSize">40dp</dimen>
+
+    <dimen name="paddingRowData">5dp</dimen>
+
+    <dimen name="baseImageSize">25dp</dimen>
+
+    <dimen name="profileImageSize">80dp</dimen>
+    <dimen name="profileSheepImageSize">120dp</dimen>
+    <dimen name="profileSheepImageSizeHalf">60dp</dimen>
+    <dimen name="profileSheepTopView">80dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="layout_top_card">140dp</dimen>
+    <dimen name="_40dp">40dp</dimen>
+    <dimen name="_5dp">5dp</dimen>
+    <dimen name="_2dp">2dp</dimen>
+    <dimen name="_15dp">15dp</dimen>
+    <dimen name="forecast_image_pager_size">170dp</dimen>
+    <dimen name="forecast_image_pager_size_ghost">160dp</dimen>
+    <dimen name="_55dp">55dp</dimen>
+    <dimen name="_26dp">26dp</dimen>
+    <dimen name="_200dp">200dp</dimen>
+</resources>

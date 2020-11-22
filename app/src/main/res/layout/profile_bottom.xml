@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.profile.ProfileViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        style="@style/textHeading"
+        android:layout_marginLeft="@dimen/_16dp"
+        android:layout_marginRight="@dimen/_16dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:onClick="@{(view) -> data.onAboutClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        android:padding="@dimen/_16dp"
+        style="@style/textSubHeading"
+        android:layout_marginTop="@dimen/topMarginUpgradeCard"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border"
+        style="@style/layoutMarginLeftRight"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/terms"
+        android:onClick="@{(view) -> data.onTermsClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/termsCondition"
+        style="@style/textSubHeading"
+        android:padding="@dimen/_16dp"
+        app:drawableEndCompat="@drawable/ic_arrow_right"
+        app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="@style/layoutMarginLeftRight"
+        android:background="@color/border"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/privacy"
+        android:onClick="@{(view) -> data.onPrivacyClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/privacyPolicy"
+        style="@style/textSubHeading"
+        android:padding="@dimen/_16dp"
+        app:drawableEndCompat="@drawable/ic_arrow_right"
+        app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="@style/layoutMarginLeftRight"
+        android:background="@color/border"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:onClick="@{(view) -> data.onAppInfoClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/appInfo"
+        style="@style/textSubHeading"
+        android:padding="@dimen/_16dp"
+        app:drawableEndCompat="@drawable/ic_arrow_right"
+        app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="@style/layoutMarginLeftRight"
+        android:background="@color/border"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/topMarginDefault"
+        android:layout_marginLeft="@dimen/_16dp"
+        android:layout_marginStart="@dimen/_16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView"
+            style="@style/textSubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/restore_data_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textBodyVeryLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/update_data_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/upgrade"
+            style="@style/textSubHeadingDark"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_round_white"
+            android:onClick="@{(view) -> data.onRestoreClick(view)}"
+            android:text="@string/restore"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

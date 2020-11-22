@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.defaultActivity.DefaultViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/colorAccent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text"
+            android:text="@{data.title}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Conclude Contract, Initiate, Important, Events, Group opening"
+            style="@style/textBody"
+            android:gravity="center"
+            android:padding="@dimen/_10dp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/layoutSmallDefault"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_marginBottom="@dimen/layoutMarginDefault"
+        android:layout_marginTop="@dimen/layoutMarginDefault">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/calendarList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/adapter_forecast_activity_calendar"
+                app:DefaultForecastCalendarAdapter="@{data.modelForecastCalendarList}"
+                app:spanCount="3"
+                android:layout_marginBottom="@dimen/layoutMarginTopInnerCard"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

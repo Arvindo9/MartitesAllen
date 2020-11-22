@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.forecast.suitable.SuitableViewModel" />
+        <variable
+            name="dataDefault"
+            type="com.maritesallen.almanac2020.ui.defaultActivity.suitableAdapter.SuitableViewModel" />
+
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/forecastLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        style="@style/layoutDefault"
+        android:layout_marginTop="@dimen/layoutMarginTopInnerCard">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon"
+            app:ImageViewUrl="@{data.image}"
+            android:layout_width="@dimen/imageIconAlmanac"
+            android:layout_height="@dimen/imageIconAlmanac"
+            tools:srcCompat="@drawable/almanac_icons_01"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text"
+            android:text="@{data.title}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Conclude Contract, Initiate, Important, Events, Group opening"
+            style="@style/textBodyDark"
+            android:layout_marginStart="@dimen/layoutMarginDistanceCard" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/defaultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        style="@style/layoutDefault"
+        android:layout_marginTop="@dimen/layoutMarginTopInnerCard">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/defaultIcon"
+            app:ImageViewUrl="@{dataDefault.image}"
+            android:layout_width="@dimen/imageIconAlmanac"
+            android:layout_height="@dimen/imageIconAlmanac"
+            app:srcCompat="@drawable/almanac_icons_01"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/defaultText"
+            android:text="@{dataDefault.title}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Conclude Contract, Initiate, Important, Events, Group opening"
+            style="@style/textBodyDark"
+            android:layout_marginStart="@dimen/layoutMarginDistanceCard" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

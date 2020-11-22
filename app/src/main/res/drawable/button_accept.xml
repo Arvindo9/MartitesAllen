@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  res/drawable/edittext_rounded_corners.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_focused="true"
+        android:state_enabled="true">
+        <shape>
+            <gradient
+                android:startColor="@color/colorAccent"
+                android:centerColor="@color/colorAccent"
+                android:endColor="@color/colorAccent"
+                android:angle="90"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorAccent" />
+            <corners android:radius= "0dp" />
+        </shape>
+    </item>
+
+    <item
+        android:state_pressed="true"
+        android:state_enabled="true">
+        <shape>
+            <gradient
+                android:startColor="@color/colorView"
+                android:centerColor="@color/colorView"
+                android:endColor="@color/colorView"
+                android:angle="90"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorView" />
+            <corners android:radius= "0dp" />
+        </shape>
+    </item>
+
+    <item
+        android:state_enabled="true">
+        <shape>
+            <gradient
+                android:startColor="@color/colorAccent"
+                android:centerColor="@color/colorAccent"
+                android:endColor="@color/colorAccent"
+                android:angle="90"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorAccent" />
+            <corners android:radius= "0dp" />
+        </shape>
+    </item>
+
+    <item
+        android:state_enabled="false">
+        <shape>
+            <gradient
+                android:startColor="@color/buttonDesible"
+                android:centerColor="@color/buttonDesible"
+                android:endColor="@color/buttonDesible"
+                android:angle="90"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/buttonDesible" />
+            <corners android:radius= "0dp" />
+        </shape>
+    </item>
+
+</selector>

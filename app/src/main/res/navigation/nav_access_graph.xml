@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/accessDefaultFragment">
+
+    <!--Fragment start, AccessFragment-->
+    <!--AccessFragment to LoginFragment-->
+    <!--AccessFragment to RegistrationFragment-->
+    <!--AccessFragment to RegistrationFacebookFragment-->
+    <fragment
+        android:id="@+id/accessDefaultFragment"
+        android:name="com.maritesallen.almanac2020.ui.access.accessDefault.AccessDefaultFragment"
+        android:label="AccessDefaultFragment"
+        tools:layout="@layout/fragment_access_default">
+
+        <action
+            android:id="@+id/action_accessDefaultFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_accessDefaultFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_accessDefaultFragment_to_registrationFacebookFragment"
+            app:destination="@id/registrationFacebookFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <!--LoginFragment to ForgetPasswordFragment-->
+    <!--LoginFragment to RegistrationFragment-->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.maritesallen.almanac2020.ui.access.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.maritesallen.almanac2020.ui.access.forgetPassword.ForgetPasswordFragment"
+        android:label="ForgetPasswordFragment"
+        tools:layout="@layout/fragment_forget_password" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_forgetPasswordUpdateFragment"
+            app:destination="@id/forgetPasswordUpdateFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.maritesallen.almanac2020.ui.access.registration.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration" />
+
+    <fragment
+        android:id="@+id/registrationFacebookFragment"
+        android:name="com.maritesallen.almanac2020.ui.access.registrationFacebook.RegistrationFacebookFragment"
+        android:label="RegistrationFacebookFragment"
+        tools:layout="@layout/fragment_registration_facebook" />
+
+    <fragment
+        android:id="@+id/forgetPasswordUpdateFragment"
+        android:name="com.maritesallen.almanac2020.ui.access.forgetPasswordUpdate.ForgetPasswordUpdateFragment"
+        android:label="ForgetPasswordUpdateFragment"
+        tools:layout="@layout/fragment_registration_facebook" >
+        <action
+            android:id="@+id/action_forgetPasswordUpdateFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+</navigation>

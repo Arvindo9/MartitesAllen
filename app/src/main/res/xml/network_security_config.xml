@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+<!--        <domain includeSubdomains="true">dev.eighteenpixels.in</domain>-->
+        <domain includeSubdomains="true">13.251.29.198</domain>
+<!--        <domain includeSubdomains="true">54.255.249.200</domain>-->
+        <domain includeSubdomains="true">3.0.208.110</domain>
+        <domain includeSubdomains="true">marites-allen-2020.s3.ap-southeast-1.amazonaws.com</domain>
+    </domain-config>
+</network-security-config>

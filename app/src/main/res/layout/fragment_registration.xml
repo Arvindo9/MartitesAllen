@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.access.registration.RegistrationViewModel" />
+    </data>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        style="@style/layoutDefault"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/signup_screen_note"
+                style="@style/textBody"
+                android:layout_marginLeft="@dimen/layoutMarginDefault"
+                android:layout_marginRight="@dimen/layoutMarginDefault"
+                android:gravity="center"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:orientation="vertical"
+            android:padding="@dimen/card_outer_margin"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/editTextBox"
+                    android:inputType="text"
+                    android:gravity="center_vertical"
+                    android:hint="@string/name"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/editTextBox"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/edittext"
+                    android:layout_marginTop="@dimen/accessEditTextTopMargin"
+                    android:hint="@string/email"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/accessEditTextTopMargin">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/birthDate"
+                        android:onClick="@{() -> data.onDateClick()}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/editTextBox"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:hint="@string/birthDate"/>
+
+                    <View
+                        android:layout_width="@dimen/textBoxSpacing"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_color"/>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/birthTime"
+                            android:onClick="@{() -> data.onTimeClick()}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/editTextBox"
+                            android:focusable="false"
+                            android:inputType="date"
+                            android:hint="@string/birthTime"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/optional"
+                            style="@style/textBodyDark"
+                            android:textColor="@color/textColorDarkLight"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="@dimen/layoutMarginDefault"
+                            android:layout_marginRight="@dimen/layoutMarginDefault" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/country"
+                    android:onClick="@{() -> data.onCountryClick()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/editTextBox"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/accessEditTextTopMargin"
+                    android:hint="@string/country"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/accessEditTextTopMargin">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/editTextBox"
+                        android:inputType="textPassword"
+                        android:hint="@string/password"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/showPassword"
+                        android:onClick="@{() -> data.onShowPasswordClick()}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_eye"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="@dimen/layoutMarginDefault"
+                        android:visibility="gone"/>
+                </FrameLayout>
+
+                <View
+                    android:layout_width="@dimen/textBoxSpacing"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_color"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/confirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/editTextBox"
+                        android:inputType="textPassword"
+                        android:hint="@string/confirmPassword"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/showConfirmPassword"
+                        android:onClick="@{() -> data.onShowConfirmPasswordClick()}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_eye"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="@dimen/layoutMarginDefault"
+                        android:visibility="gone"/>
+                </FrameLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/card_outer_margin"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:onClick="@{() -> data.onTermsClick()}"
+                android:id="@+id/termCheckBok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:layout_gravity="center_vertical"
+                android:buttonTint="@color/colorAccent"
+                app:buttonTint="@color/colorAccent"
+                android:textColorLink="@color/colorLink"
+                android:text="@string/terms"
+                style="@style/textBody"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
+                android:id="@+id/terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSizeLow"
+                android:layout_gravity="center_vertical"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        style="@style/layoutDefault"
+        android:layout_weight="2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/login"
+            android:onClick="@{() -> data.onSignUpClick()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signUp"
+            android:layout_centerInParent="true"
+            style="@style/button"
+            android:layout_margin="@dimen/layoutMarginDefault"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>
+</layout>

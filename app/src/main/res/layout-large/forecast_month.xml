@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.forecast.ForecastViewModel" />
+    </data>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/layoutSmallDefault"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardBackgroundColor="@color/colorAccent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/colorCard">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    app:ImageViewUrl="@{data.animalMonth}"
+                    android:layout_width="@dimen/imageIconAlmanacMonth"
+                    android:layout_height="@dimen/imageIconAlmanacMonth"
+                    android:id="@+id/heading2"
+                    android:layout_gravity="start"
+                    android:background="@drawable/circle"
+                    android:padding="@dimen/_3sdp"
+                    app:srcCompat="@drawable/forecast_month"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/title"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:text="@{data.titleMonth}"
+                    android:id="@+id/title"
+                    style="@style/textSubHeadingDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    tools:text="Month of OX\nConflict month of Sheep"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/heading2"
+                    app:layout_constraintStart_toEndOf="@+id/heading"
+                    app:layout_constraintTop_toTopOf="parent" />
+<!--
+                <androidx.appcompat.widget.AppCompatImageView
+                    app:ImageViewUrl="@{data.animalConflictMonth}"
+                    android:layout_width="@dimen/imageIconAlmanacMonth"
+                    android:layout_height="@dimen/imageIconAlmanacMonth"
+                    android:id="@+id/heading"
+                    app:srcCompat="@drawable/forecast_month"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/title"
+                    app:layout_constraintTop_toTopOf="parent" />
+-->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    app:ImageViewUrl="@{data.animalConflictMonth}"
+                    android:layout_width="@dimen/imageIconAlmanacMonth"
+                    android:layout_height="@dimen/imageIconAlmanacMonth"
+                    android:id="@+id/heading"
+                    android:background="@drawable/circle"
+                    android:padding="@dimen/_3sdp"
+                    app:srcCompat="@drawable/forecast_month"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/title"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layoutMarginTopInnerCard"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Animal sign of the day - "
+                    style="@style/textBodyLow"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.titleDayAnimal}"
+                    tools:text="Snake"
+                    style="@style/textBody"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conflict Animal sign of the day - "
+                    style="@style/textBodyLow"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Boar"
+                    android:text="@{data.titleDayConflictAnimal}"
+                    style="@style/textBody"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginTop="@dimen/layoutMarginTopInnerCard">
+
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Hour of day"
+                        android:gravity="center"
+                        style="@style/textBodyLowDark"
+                        android:padding="@dimen/_10dp"
+                        android:layout_margin="0.5dp"
+                        android:background="@color/colorView"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Animal sign"
+                        style="@style/textBodyLowDark"
+                        android:gravity="center"
+                        android:layout_margin="0.5dp"
+                        android:padding="@dimen/_10dp"
+                        android:background="@color/colorView"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Luck forecast"
+                        android:gravity="center"
+                        style="@style/textBodyLowDark"
+                        android:layout_margin="0.5dp"
+                        android:padding="@dimen/_10dp"
+                        android:background="@color/colorView"/>
+                </TableRow>
+
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:text="@{data.slotDay}"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        tools:text="19:00-21:00"
+                        android:gravity="center"
+                        android:padding="@dimen/_10dp"
+                        android:layout_margin="0.5dp"
+                        android:background="@color/colorAccent"
+                        style="@style/textBody"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:text="@{data.slotAnimal}"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        tools:text="Dog"
+                        style="@style/textBody"
+                        android:padding="@dimen/_10dp"
+                        android:layout_margin="0.5dp"
+                        android:background="@color/colorAccent"
+                        android:gravity="center"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="0.5dp"
+                        android:background="@color/colorAccent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/luckForecastImage"
+                            app:ImageViewUrl="@{data.slotForecastImage}"
+                            android:visibility="@{data.slotForecastImage.isEmpty()? View.GONE : View.VISIBLE}"
+                            android:layout_width="@dimen/_15dp"
+                            android:layout_height="@dimen/_15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/luckForecast"
+                            app:layout_constraintHorizontal_bias="0.8"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:srcCompat="@drawable/ic_star" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/luckForecast"
+                            style="@style/textBody"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@{data.slotForecast}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Lucky" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </TableRow>
+            </TableLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/forecast_month_note1"
+                style="@style/textBodyVeryLow"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/layoutMarginTopInnerCard"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/forecast_month_note2"
+                style="@style/textBodyVeryLow"
+                android:gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/forecast_month_note3"
+                style="@style/textBodyVeryLow"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/layoutMarginTopInnerCard"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

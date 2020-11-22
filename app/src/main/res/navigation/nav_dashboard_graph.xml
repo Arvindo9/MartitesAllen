@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/forecastFragment">
+
+    <fragment
+        android:id="@+id/forecastFragment"
+        android:name="com.maritesallen.almanac2020.ui.dashboard.forecast.ForecastFragment"
+        android:label="ForecastFragment"
+        tools:layout="@layout/fragment_forecast" >
+
+
+        <argument
+            android:name="date"
+            app:argType="string"
+            android:defaultValue="tmp"/>
+
+        <action
+            android:id="@+id/action_forecastFragment_self"
+            app:destination="@id/forecastFragment"
+
+            app:popUpTo="@+id/forecastFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+
+        <action
+            android:id="@+id/action_forecastFragment_to_calenderFragment"
+            app:destination="@id/calenderFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_forecastFragment_to_booksFragment"
+            app:destination="@id/booksFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_forecastFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/calenderFragment"
+        android:name="com.maritesallen.almanac2020.ui.dashboard.calender.CalenderFragment"
+        android:label="CalenderFragment"
+        tools:layout="@layout/fragment_calender"  >
+        <action
+            android:id="@+id/action_calenderFragment_to_forecastFragment"
+            app:destination="@id/forecastFragment"
+
+            app:popUpTo="@+id/forecastFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_calenderFragment_to_booksFragment"
+            app:destination="@id/booksFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_calenderFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_calenderFragment_self"
+            app:destination="@id/calenderFragment"
+
+            app:popUpTo="@+id/calenderFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/booksFragment"
+        android:name="com.maritesallen.almanac2020.ui.dashboard.books.BooksFragment"
+        android:label="BooksFragment"
+        tools:layout="@layout/fragment_books"  >
+        <action
+            android:id="@+id/action_booksFragment_to_forecastFragment"
+            app:destination="@id/forecastFragment"
+
+            app:popUpTo="@+id/forecastFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_booksFragment_to_calenderFragment"
+            app:destination="@id/calenderFragment"
+
+            app:popUpTo="@+id/calenderFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_booksFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_booksFragment_self"
+            app:destination="@id/booksFragment"
+
+            app:popUpTo="@+id/booksFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.maritesallen.almanac2020.ui.dashboard.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"  >
+        <action
+            android:id="@+id/action_profileFragment_to_forecastFragment"
+            app:destination="@id/forecastFragment"
+
+            app:popUpTo="@+id/forecastFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_booksFragment"
+            app:destination="@id/booksFragment"
+
+            app:popUpTo="@+id/booksFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_calenderFragment"
+            app:destination="@id/calenderFragment"
+
+            app:popUpTo="@+id/calenderFragment"
+            app:popUpToInclusive="true"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+</navigation>

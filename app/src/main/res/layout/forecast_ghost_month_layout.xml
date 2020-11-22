@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+    <variable
+        name="data"
+        type="com.maritesallen.almanac2020.ui.dashboard.forecast.ForecastViewModel" />
+</data>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:visibility="gone"
+    tools:visibility="visible"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/layoutSmallDefault"
+    app:cardCornerRadius="@dimen/card_corner_radius">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<!--                android:layout_margin="@dimen/card_inner_margin_adapter"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardHeaderSize"
+        android:orientation="horizontal"
+        android:background="@color/colorCard">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/the_hungry_ghost_month"
+            style="@style/textSubHeadingDark"
+            android:layout_marginStart="@dimen/layoutMarginDefault"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_margin="@dimen/card_inner_margin">
+
+        <com.maritesallen.almanac2020.base.views.BaseViewPager
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forecast_image_pager_size_ghost"
+            android:id="@+id/ghostMonthPager"
+            app:GhostMonthPager="@{data.ghostMonthList}"/>
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d34a4a</color>
+    <color name="colorPrimaryDark">#AC2828</color>
+    <color name="colorAccent">#6e2026</color>
+    <color name="colorCard">#d6bf99</color>
+    <color name="colorView">#9ac192</color>
+
+    <color name="colorRatCard">#94BE2F2F</color>
+
+    <color name="colorPrimaryCard">#BE2F2F</color>
+
+    <color name="colorPrimaryOptic">#D2D34A4A</color>
+
+    <color name="colorLink">@color/colorAccent</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="border">#D6D3D3</color>
+    <color name="shadow">#CCC9C9</color>
+
+    <color name="buttonDesible">#807878</color>
+
+    <color name="dashboardIconColorDefault">#727C8E</color>
+
+    <color name="textColorDefault">#FFFFFF</color>
+    <color name="textColorDarkDefault">#000000</color>
+    <color name="textColorColoredDefault">@color/colorAccent</color>
+    <color name="textColorDarkLight">#858282</color>
+
+    <color name="white">#F5F5F5</color>
+    <color name="facebook_button">#3a5897</color>
+    <color name="dashboardDefaultIconColor">#111111</color>
+    <color name="toolbarColor">#FFFFFF</color>
+
+    <color name="loaderColor">#dddddd</color>
+<!--    <color name="white">#ffffff</color>-->
+
+</resources>

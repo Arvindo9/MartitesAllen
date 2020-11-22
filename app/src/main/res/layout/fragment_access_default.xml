@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.access.accessDefault.AccessDefaultViewModel" />
+    </data>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <include
+            layout="@layout/logo_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/background_rat"
+                android:layout_weight="6"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/card_outer_margin"
+            android:padding="@dimen/card_inner_margin"
+            android:gravity="center_vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/textBoxSpacing">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/loginFacebook"
+                    android:onClick="@{(view) -> data.onLoginFacebookClick(view)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/connect_facebook"
+                    style="@style/facebookButton"
+                    />
+
+                <com.facebook.login.widget.LoginButton
+                    android:visibility="invisible"
+                    android:id="@+id/login_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/facebookIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20dp"
+                    android:layout_marginRight="@dimen/_20dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_facebook"
+                    android:elevation="@dimen/_8dp"
+                    app:elevation="@dimen/_8dp"/>
+            </FrameLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/textBoxSpacing">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/loginIn"
+                    android:onClick="@{(view) -> data.onLoginInClick(view)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/login"
+                    android:layout_centerInParent="true"
+                    style="@style/textViewBox"
+                    app:drawableLeftCompat="@drawable/ic_login"
+                    app:drawableStartCompat="@drawable/ic_login"
+                    android:textAlignment="center"
+                    android:layout_marginRight="@dimen/textBoxSpacing"
+                    android:layout_marginEnd="@dimen/textBoxSpacing" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/signUp"
+                    android:onClick="@{(view) -> data.onSignUpClick(view)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/signup"
+                    android:layout_centerInParent="true"
+                    style="@style/textViewBox"
+                    app:drawableLeftCompat="@drawable/ic_signup"
+                    app:drawableStartCompat="@drawable/ic_signup"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="@dimen/textBoxSpacing"
+                    android:layout_marginStart="@dimen/textBoxSpacing" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/loginGuest"
+                android:onClick="@{(view) -> data.onLoginGuestClick(view)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/log_in_as_guest"
+                android:padding="@dimen/_10dp"
+                android:layout_centerHorizontal="true"
+                style="@style/textBody"
+                />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

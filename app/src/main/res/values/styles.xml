@@ -1,0 +1,261 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AppCompat.Translucent" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="default_dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+<!--        <item name="android:windowNoTitle">true</item>-->
+    </style>
+
+    <style name="DateDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="TimeDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+        <item name="android:textColorPrimary">@color/textColorDefault</item>
+    </style>
+
+    <style name="picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColor">@color/textColorDefault</item>
+    </style>
+
+
+    <!--  =============================================================  -->
+
+    <!--Toolbar-->
+
+    <style name="toolbarTransparent" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <!-- Support library compatibility -->
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/textColorDarkDefault</item>
+    </style>
+
+
+    <!--End-->
+
+    <!--  =============================================================  -->
+    <!--For name or any main things-->
+
+    <style name="button" parent="@android:style/Widget.TextView">
+        <item name="android:shadowColor">@color/colorPrimaryDark</item>
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/_10dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:gravity">center</item>
+        <!--        <item name="android:textSize">@dimen/textButtonSizeDefault</item>-->
+        <!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>-->
+        <item name="android:textSize">@dimen/textBody</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>-->
+    </style>
+
+    <style name="buttonAccept" parent="@android:style/Widget.TextView">
+        <item name="android:shadowColor">@color/textColorDefault</item>
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/_8dp</item>
+        <item name="android:background">@drawable/button_accept</item>
+        <item name="android:gravity">center</item>
+        <!--        <item name="android:textSize">@dimen/textButtonSizeDefault</item>-->
+        <!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>-->
+        <item name="android:textSize">@dimen/textBody</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>-->
+    </style>
+
+    <!--For TextText-->
+    <style name="facebookButton" parent="@android:style/Widget.TextView">
+        <item name="android:shadowColor">@color/textColorDefault</item>
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/_10dp</item>
+        <item name="android:background">@drawable/button_facebook</item>
+        <item name="android:gravity">center</item>
+        <!--        <item name="android:textSize">@dimen/textButtonSizeDefault</item>-->
+        <!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>-->
+        <item name="android:textSize">@dimen/textBody</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>-->
+    </style>
+
+    <!--  =============================================================  -->
+
+    <!--For EditText-->
+    <style name="editTextBox" parent="@android:style/Widget.EditText">
+        <item name="android:shadowColor">@color/textColorColoredDefault</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:shadowRadius">0.2</item>
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+<!--        <item name="android:textSize">@dimen/textButtonSizeDefault</item>-->
+        <item name="android:textColor">@color/textColorDarkDefault</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/_10dp</item>
+        <item name="android:background">@drawable/edittext</item>
+        <item name="android:textSize">@dimen/textBody</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>-->
+    </style>
+
+    <!--  =============================================================  -->
+
+    <!--For TextText-->
+    <style name="textViewBox" parent="@android:style/Widget.TextView">
+        <item name="android:shadowColor">@color/textColorColoredDefault</item>
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+<!--        <item name="android:textColor">@color/textColorColoredDefault</item>-->
+        <item name="android:textColor">@color/textColorDarkDefault</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/_10dp</item>
+        <item name="android:background">@drawable/edittext</item>
+<!--        <item name="android:textSize">@dimen/textButtonSizeDefault</item>-->
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>-->
+        <item name="android:textSize">@dimen/textBody</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>-->
+    </style>
+
+    <style name="textHeading" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_semi_bold</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+        <item name="android:textSize">@dimen/textHeading</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>-->
+    </style>
+
+    <style name="textHeadingBig" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_semi_bold</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+        <item name="android:textSize">@dimen/textHeadingBig</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>-->
+    </style>
+
+    <style name="textHeadingDark" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_semi_bold</item>
+        <item name="android:textColor">@color/textColorDarkDefault</item>
+        <item name="android:textSize">@dimen/textHeading</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>-->
+    </style>
+
+    <style name="textSubHeading" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_semi_bold</item>
+        <item name="android:textSize">@dimen/textSubHeading</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>-->
+    </style>
+
+    <style name="textSubHeadingDark" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_semi_bold</item>
+        <item name="android:textSize">@dimen/textSubHeading</item>
+        <item name="android:textColor">@color/textColorDarkDefault</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>-->
+    </style>
+
+    <style name="textBody" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+        <item name="android:textSize">@dimen/textBody</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>-->
+    </style>
+
+    <style name="textBodyDark" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textSize">@dimen/textBody</item>
+        <item name="android:textColor">@color/textColorDarkDefault</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>-->
+    </style>
+
+    <style name="textBodyLow" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textSize">@dimen/textBodyLow</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>-->
+    </style>
+
+    <style name="textBodyLowDark" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textSize">@dimen/textBodyLow</item>
+        <item name="android:textColor">@color/textColorDarkDefault</item>
+    </style>
+
+    <style name="textBodyVeryLow" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textSize">@dimen/textBodyVeryLow</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>-->
+    </style>
+
+    <style name="textBodyVeryLowDark" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textSize">@dimen/textBodyVeryLow</item>
+        <item name="android:textColor">@color/textColorDarkDefault</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>-->
+    </style>
+
+    <!--  =============================================================  -->
+
+    <style name="layoutDefault" parent="android:TextAppearance.Widget">
+        <item name="android:layout_marginLeft">@dimen/layoutLeftMarginDefault</item>
+        <item name="android:layout_marginStart">@dimen/layoutLeftMarginDefault</item>
+        <item name="android:layout_marginEnd">@dimen/layoutRightMarginDefault</item>
+        <item name="android:layout_marginRight">@dimen/layoutRightMarginDefault</item>
+    </style>
+
+    <style name="layoutSmallDefault" parent="android:TextAppearance.Widget">
+        <item name="android:layout_marginLeft">@dimen/layoutMarginSmallDefault</item>
+        <item name="android:layout_marginStart">@dimen/layoutMarginSmallDefault</item>
+        <item name="android:layout_marginEnd">@dimen/layoutMarginSmallDefault</item>
+        <item name="android:layout_marginRight">@dimen/layoutMarginSmallDefault</item>
+    </style>
+
+    <style name="layoutMarginLeftRight" parent="@android:style/Widget.TextView">
+        <item name="android:layout_marginLeft">@dimen/_10dp</item>
+        <item name="android:layout_marginStart">@dimen/_10dp</item>
+        <item name="android:layout_marginEnd">@dimen/_10dp</item>
+        <item name="android:layout_marginRight">@dimen/_10dp</item>
+    </style>
+
+
+    <!--  =============================================================  -->
+
+    <!--Text Button-->
+
+
+    <!--Text Button-->
+
+</resources>

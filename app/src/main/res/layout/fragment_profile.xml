@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.profile.ProfileViewModel" />
+    </data>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/background">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/profile_info"
+        layout="@layout/profile_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/profile_upgrade_card"
+        layout="@layout/profile_upgrade_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/layoutAds"
+        layout="@layout/layout_ads"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:id="@+id/profile_sheep_card"
+        layout="@layout/profile_sheep_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/topMarginDefault"
+        app:data="@{data}"/>
+
+    <include
+        android:id="@+id/offline_card"
+        layout="@layout/offline_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:id="@+id/profile_bottom"
+        layout="@layout/profile_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:data="@{data}"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="@dimen/topMarginDoubleDefault"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>
+</layout>

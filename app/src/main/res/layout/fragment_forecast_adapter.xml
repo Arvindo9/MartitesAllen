@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="data"
+            type="com.maritesallen.almanac2020.ui.dashboard.forecast.mainPager.ForecastAdapterViewModel" />
+    </data>
+<RelativeLayout
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/layoutSmallDefault"
+    android:layout_margin="@dimen/card_outer_margin"
+    app:cardCornerRadius="@dimen/card_corner_radius">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/card_inner_margin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forecast_image_pager_size"
+            app:cardCornerRadius="@dimen/card_corner_radius">
+            <!--
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/auspicious_symbols_1"/>
+            -->
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/pager"
+                app:ForecastImagePager="@{data.modelSliderList}"
+                tools:listitem="@layout/adapter_image_forecast"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/topMarginCalenderCard"
+        android:layout_marginBottom="@dimen/_5dp"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dutyOfficer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="stable"
+            android:text="@{data.dutyOfficer}"
+            style="@style/textBodyLowDark"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/text_rextangle"
+            android:padding="5dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:visibility="@{data.moonImage.isEmpty()? View.GONE : View.VISIBLE}"
+            android:id="@+id/layoutMoonBorder"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/border"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_5dp"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutMoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/imageIconMoon"
+                android:layout_height="@dimen/imageIconMoon"
+                android:gravity="center"
+                android:visibility="@{data.moonImage.isEmpty()? View.GONE : View.VISIBLE}"
+                app:ImageViewUrl="@{data.moonImage}"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.moonStatus}"
+                tools:text="Warning crescent"
+                style="@style/textBodyLowDark"
+                android:layout_marginStart="5dp"
+                android:gravity="center"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|end">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/shopNow"
+                style="@style/textBodyLow"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shop"
+                android:text="@string/shop_now"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/layoutMarginSmallDefault" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:visibility="gone"
+        android:id="@+id/layoutDutyOfficeDescription"
+        android:layout_marginTop="@dimen/_5dp"
+        android:layout_marginBottom="@dimen/_5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:visibility="visible"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dutyOfficeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{data.dutyOfficerDescription}"
+            tools:text=" nd,fn dsf"
+            style="@style/textBodyDark"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
+</RelativeLayout>
+</layout>
